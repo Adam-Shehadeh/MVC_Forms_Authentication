@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/_LayoutPage1.cshtml";
 }
@@ -9,6 +8,20 @@
 
 @if (Request.IsAuthenticated) {
     <p>This Request is Authenticated.</p>
+    <table>
+        <tr>
+            <td><b>UserId:</b></td>
+            <td>@ViewBag.User.UserID</td>
+        </tr>
+        <tr>
+            <td><b>Name:</b></td>
+            <td>@ViewBag.User.Name</td>
+        </tr>
+        <tr>
+            <td><b>Username:</b></td>
+            <td>@ViewBag.User.Username</td>
+        </tr>
+    </table>
     <p>Click @Html.ActionLink("here", "Logout","Home") to sign out.</p>
 } else {
     <p>This Request is NOT authenticated.</p> 

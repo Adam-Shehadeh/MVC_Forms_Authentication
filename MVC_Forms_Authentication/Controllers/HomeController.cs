@@ -14,6 +14,7 @@ namespace MVC_Forms_Authentication.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.User = SessionContext.GetUser() ?? null;
             return View();
         }
 
