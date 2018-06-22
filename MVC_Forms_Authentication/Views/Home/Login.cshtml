@@ -7,34 +7,34 @@
 <h2>Login</h2>
 <hr />
 <div>
-    @using (Html.BeginForm("Login", "Home", FormMethod.Post)) {
-    <table>
-        <tr>
-            <td>
-                <label style="min-width:200px;">Username: </label>
-            </td>
-            <td>
-                <input type="text" id="txtUsername" name="username" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label style="width:200px;">Password: </label>
-            </td>
-            <td>
-                <input type="password" id="txtPassword" name="password" />
-            </td>
-        </tr>
-    </table>
-    <button style="margin-left:200px;" type="submit">Log in</button>
-    }
+    <form action="Login" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label style="min-width:200px;">Username: </label>
+                </td>
+                <td>
+                    <input type="text" id="txtUsername" name="username" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="width:200px;">Password: </label>
+                </td>
+                <td>
+                    <input type="password" id="txtPassword" name="password" />
+                </td>
+            </tr>
+        </table>
+        <button style="margin-left:200px;" type="submit">Log in</button>
+    </form>
 </div>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
     //function do_login() {
     //    $.ajax({
     //        cache: false,   //because f*ck internet explorer
-    //        url: "/Home/LoginPost",
+    //        url: "/Home/Login",
     //        data: {username: $('#txtUsername').val(), password: $('#txtPassword').val()},
     //        type: "POST",
     //        success: function (result) {

@@ -19,9 +19,10 @@ namespace MVC_Forms_Authentication.Classes {
         }
         public static User GetUser() {
             try {
-                HttpCookie chocolate_fucking_chip_cookie = HttpContext.Current.Request.Cookies["LoginData"];
+                HttpCookie chocolate_fucking_chip_cookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
                 if (chocolate_fucking_chip_cookie != null) {
                     FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(chocolate_fucking_chip_cookie.Value);
+                    string m = ticket.UserData;
                     User local = new JavaScriptSerializer().Deserialize<User>(ticket.UserData);
                     return local;
                 } else
